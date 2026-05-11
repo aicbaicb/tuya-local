@@ -49,33 +49,32 @@ entities:
       - id: 105
         type: boolean
         name: switch
- - entity: light
-  name: Colour lamp
-  dps:
-    - id: 106
-      type: boolean
-      name: switch
-
-    - id: 107
-      type: string
-      name: effect
-      mapping:
-        - dps_val: "00"
-          value: Rainbow
-        - dps_val: "01"
-          value: Red
-        - dps_val: "02"
-          value: Yellow
-        - dps_val: "03"
-          value: Green
-        - dps_val: "04"
-          value: Cyan
-        - dps_val: "05"
-          value: Blue
-        - dps_val: "06"
-          value: Purple
-        - dps_val: "07"
-          value: White
+  - entity: light
+    name: Colour lamp
+    dps:
+      - id: 106
+        type: boolean
+        name: switch
+      - id: 107
+        type: string
+        name: effect
+        mapping:
+          - dps_val: "00"
+            value: Rainbow
+          - dps_val: "01"
+            value: Red
+          - dps_val: "02"
+            value: Yellow
+          - dps_val: "03"
+            value: Green
+          - dps_val: "04"
+            value: Cyan
+          - dps_val: "05"
+            value: Blue
+          - dps_val: "06"
+            value: Purple
+          - dps_val: "07"
+            value: White
           
   - entity: switch
     name: Aromatherapy
