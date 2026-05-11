@@ -21,16 +21,10 @@ entities:
         range:
           min: 25
           max: 68
-        mapping:
-          - constraint: temperature_unit
-            conditions:
-              - dps_val: true
-                range:
-                  min: 77
-                  max: 154
       - id: 112
         type: integer
         name: current_temperature
+        readonly: true
       - id: 113
         type: boolean
         name: temperature_unit
@@ -40,43 +34,43 @@ entities:
           - dps_val: true
             value: F
   - entity: switch
+    name: Power
     dps:
       - id: 101
         type: boolean
         name: switch
   - entity: light
+    name: Light
     dps:
       - id: 105
         type: boolean
         name: switch
- - entity: light
-  name: Colour lamp
-  dps:
-    - id: 106
-      type: boolean
-      name: switch
-
-    - id: 107
-      type: string
-      name: effect
-      mapping:
-        - dps_val: "00"
-          value: Rainbow
-        - dps_val: "01"
-          value: Red
-        - dps_val: "02"
-          value: Yellow
-        - dps_val: "03"
-          value: Green
-        - dps_val: "04"
-          value: Cyan
-        - dps_val: "05"
-          value: Blue
-        - dps_val: "06"
-          value: Purple
-        - dps_val: "07"
-          value: White
-          
+  - entity: light
+    name: Colour Lamp
+    dps:
+      - id: 106
+        type: boolean
+        name: switch
+      - id: 107
+        type: string
+        name: effect
+        mapping:
+          - dps_val: "00"
+            value: Rainbow
+          - dps_val: "01"
+            value: Red
+          - dps_val: "02"
+            value: Yellow
+          - dps_val: "03"
+            value: Green
+          - dps_val: "04"
+            value: Cyan
+          - dps_val: "05"
+            value: Blue
+          - dps_val: "06"
+            value: Purple
+          - dps_val: "07"
+            value: White
   - entity: switch
     name: Aromatherapy
     dps:
@@ -84,12 +78,13 @@ entities:
         type: boolean
         name: switch
   - entity: switch
-    name: Wash rinse
+    name: Wash / Rinse
     dps:
       - id: 109
         type: boolean
         name: switch
   - entity: binary_sensor
+    name: Fault
     class: problem
     category: diagnostic
     dps:
@@ -99,13 +94,8 @@ entities:
         mapping:
           - dps_val: 0
             value: false
-          - value: true
-      - id: 111
-        type: bitfield
-        name: fault_code
-        hidden: true
   - entity: button
-    name: Clock sync
+    name: RTC Sync
     icon: "mdi:timer-sync-outline"
     category: config
     dps:
@@ -113,36 +103,32 @@ entities:
         type: boolean
         name: button
   - entity: sensor
-    translation_key: time_remaining
+    name: Countdown Timer
     category: diagnostic
-    hidden: true
     dps:
       - id: 103
         type: base64
         name: sensor
         optional: true
   - entity: sensor
-    name: Schedule
+    name: Schedule / Timing
     category: diagnostic
-    hidden: true
     dps:
       - id: 110
         type: base64
         name: sensor
         optional: true
   - entity: sensor
-    name: Steam time count
+    name: Steam Time Count
     category: diagnostic
-    hidden: true
     dps:
       - id: 115
         type: base64
         name: sensor
         optional: true
   - entity: sensor
-    name: Temperature range
+    name: Time / Temperature Range
     category: diagnostic
-    hidden: true
     dps:
       - id: 116
         type: base64
